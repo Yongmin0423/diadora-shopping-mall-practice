@@ -26,7 +26,7 @@ export default function Card({ productList }) {
           <div
             className={styles.card}
             style={{
-              backgroundImage: `url(${product.img})`,
+              backgroundImage: `url(${product.img.replace(/^\//, "")})`,
             }}
           ></div>
           <div className={styles.info}>
