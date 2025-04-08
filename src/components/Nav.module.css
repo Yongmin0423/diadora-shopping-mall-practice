@@ -1,0 +1,28 @@
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 3%;
+}
+
+.searchArea {
+  display: flex;
+  align-items: center;
+  font-size: 2.5rem;
+  font-weight: 100;
+  gap: 40px;
+}
+
+.menu {
+  display: flex;
+  gap: 20px;
+  font-size: 20px;
+  font-weight: 700;
+  :hover {
+    color: RGB(0, 136, 62);
+  }
+  cursor: pointer;
+  .orange {
+    color: #f05628;
+  }
+}
