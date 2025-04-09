@@ -11,6 +11,9 @@
   font-size: 2.5rem;
   font-weight: 100;
   gap: 40px;
+  svg {
+    cursor: pointer;
+  }
 }
 
 .menu {

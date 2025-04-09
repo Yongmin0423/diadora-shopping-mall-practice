@@ -3,6 +3,8 @@ import { FaShoppingBag } from "react-icons/fa";
 import { IoPerson } from "react-icons/io5";
 import { FaMagnifyingGlass } from "react-icons/fa6";
 import { motion, AnimatePresence } from "motion/react";
+import SearchModal from "./SearchModal";
+import { useState } from "react";
 
 const NavVariants = {
   initial: {
@@ -25,6 +27,11 @@ const LogoVariants = {
 };
 
 export default function Nav() {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggleModal = () => {
+    setIsOpen((prev) => !prev);
+  };
   return (
     <>
       <AnimatePresence>
@@ -67,11 +74,12 @@ export default function Nav() {
             <li>Lookbook</li>
           </ul>
           <div className={styles.searchArea}>
-            <FaMagnifyingGlass />
+            <FaMagnifyingGlass onClick={toggleModal} />
             <FaShoppingBag />
             <IoPerson />
           </div>
         </motion.div>
+        {isOpen && <SearchModal isOpen={isOpen} toggleModal={toggleModal} />}
       </AnimatePresence>
     </>
   );

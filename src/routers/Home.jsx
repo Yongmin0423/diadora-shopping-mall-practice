@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { getProducts } from "../api";
 import Card from "../components/Card";
+import styles from "./Home.module.css";
 
 export default function Home() {
   const [productList, setProductList] = useState([]);
@@ -14,6 +15,7 @@ export default function Home() {
   }, []);
   return (
     <>
+      <div className={styles.banner}></div>
       <Card productList={productList} />
     </>
   );
