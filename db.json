@@ -2,44 +2,73 @@
   "products": [
     {
       "id": 0,
-      "img": "https://noona-hnm.netlify.app/pattern-jacket.jpeg",
-      "title": "벨티드 트윌 코트",
-      "price": 99900,
+      "img": "https://image.msscdn.net/thumbnails/images/prd_img/20250115/4723040/detail_4723040_17369309573069_big.jpg?w=1200",
+      "detailImg": [
+        "https://image.msscdn.net/thumbnails/images/goods_img/20250115/4723040/4723040_17413074930295_big.jpg?w=1200",
+        "https://image.msscdn.net/thumbnails/images/prd_img/20250115/4723040/detail_4723040_17369309573069_big.jpg?w=1200",
+        "https://image.msscdn.net/thumbnails/images/prd_img/20250115/4723040/detail_4723040_17369309574704_big.jpg?w=1200",
+        "https://image.msscdn.net/thumbnails/images/prd_img/20250115/4723040/detail_4723040_17369309576421_big.jpg?w=1200",
+        "https://image.msscdn.net/thumbnails/images/prd_img/20250115/4723040/detail_4723040_17369309578154_big.jpg?w=1200"
+      ],
+      "title": "벨루나 SILVER",
+      "price": 149000,
       "choice": true,
       "new": true,
-      "size": ["S", "M", "L"]
+      "size": [230, 240, 250, 260, 270]
     },
     {
       "id": 1,
-      "img": "https://noona-hnm.netlify.app/ankle-jeans.jpeg",
-      "title": "슬림핏 맘 하이웨이스트 앵클 진",
-      "price": 29900,
+      "img": "https://image.msscdn.net/thumbnails/images/prd_img/20250304/4853951/detail_4853951_17410731057195_big.jpg?w=1200",
+      "detailImg": [
+        "https://image.msscdn.net/thumbnails/images/goods_img/20250304/4853951/4853951_17413075407471_big.jpg?w=1200",
+        "https://image.msscdn.net/thumbnails/images/prd_img/20250304/4853951/detail_4853951_17410731057195_big.jpg?w=1200",
+        "https://image.msscdn.net/thumbnails/images/prd_img/20250304/4853951/detail_4853951_17410731059139_big.jpg?w=1200",
+        "https://image.msscdn.net/thumbnails/images/prd_img/20250304/4853951/detail_4853951_17410731060678_big.jpg?w=1200",
+        "https://image.msscdn.net/thumbnails/images/prd_img/20250304/4853951/detail_4853951_17410731063008_big.jpg?w=1200"
+      ],
+      "title": "벨루나 DARK BLACK",
+      "price": 149000,
       "choice": true,
       "new": true,
-      "size": ["S", "M", "L"]
+      "size": [230, 240, 250, 260, 270]
     },
     {
       "id": 2,
-      "img": "https://noona-hnm.netlify.app/wide-jeans.jpeg",
-      "title": "와이드 하이웨이스트 진",
-      "price": 39900,
-      "choice": false,
+      "img": "https://image.msscdn.net/thumbnails/images/goods_img/20250124/4744465/4744465_17413075206366_big.jpg?w=1200",
+      "detailImg": [
+        "https://image.msscdn.net/thumbnails/images/goods_img/20250124/4744465/4744465_17413075206366_big.jpg?w=1200",
+        "https://image.msscdn.net/thumbnails/images/prd_img/20250124/4744465/detail_4744465_17377040216670_big.jpg?w=1200",
+        "https://image.msscdn.net/thumbnails/images/prd_img/20250124/4744465/detail_4744465_17377040217942_big.jpg?w=1200"
+      ],
+      "title": "블루밍 맨투맨 우먼 GREY",
+      "price": 99000,
+      "choice": true,
       "new": true,
       "size": ["S", "M", "L"]
     },
     {
       "id": 3,
-      "img": "https://noona-hnm.netlify.app/cottom-dress.jpeg",
-      "title": "퍼프 슬리브 드레스",
+      "img": "https://image.msscdn.net/thumbnails/images/goods_img/20250305/4862425/4862425_17411658506308_big.jpg?w=1200",
+      "detailImg": [
+        "https://image.msscdn.net/thumbnails/images/goods_img/20250305/4862425/4862425_17411658506308_big.jpg?w=1200",
+        "https://image.msscdn.net/thumbnails/images/prd_img/20250305/4862425/detail_4862425_17411658512961_big.jpg?w=1200",
+        "https://image.msscdn.net/thumbnails/images/prd_img/20250305/4862425/detail_4862425_17411658514708_big.jpg?w=1200"
+      ],
+      "title": "에르미나 그라데이션 플리츠 스커트 PTN BLUE",
       "price": 39900,
       "choice": false,
       "new": true,
-      "size": ["S", "M", "L"]
+      "size": ["XS", "S", "M", "L"]
     },
     {
       "id": 4,
-      "img": "https://noona-hnm.netlify.app/shirt-dress.jpeg",
-      "title": "프릴 디테일 드레스",
+      "img": "https://image.msscdn.net/thumbnails/images/goods_img/20250305/4858356/4858356_17411368814426_big.jpg?w=1200",
+      "detailImg": [
+        "https://image.msscdn.net/thumbnails/images/goods_img/20250305/4858356/4858356_17411368814426_big.jpg?w=1200",
+        "https://image.msscdn.net/thumbnails/images/prd_img/20250305/4858356/detail_4858356_17411368825630_big.jpg?w=1200",
+        "https://image.msscdn.net/thumbnails/images/prd_img/20250305/4858356/detail_4858356_17411368827228_big.jpg?w=1200s"
+      ],
+      "title": "포르테 포터블 보스턴백 IVORY",
       "price": 29900,
       "choice": true,
       "new": false,
