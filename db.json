@@ -76,17 +76,27 @@
     },
     {
       "id": 5,
-      "img": "https://noona-hnm.netlify.app/flare-dress.jpeg",
-      "title": "시퀸 플레어 드레스",
-      "price": 39900,
+      "img": "https://image.msscdn.net/thumbnails/images/goods_img/20250204/4753794/4753794_17386324759378_big.jpg?w=1200",
+      "detailImg": [
+        "https://image.msscdn.net/thumbnails/images/goods_img/20250204/4753794/4753794_17386324759378_big.jpg?w=1200",
+        "https://image.msscdn.net/thumbnails/images/prd_img/20250204/4753794/detail_4753794_17386324773065_big.jpg?w=1200",
+        "https://image.msscdn.net/thumbnails/images/prd_img/20250204/4753794/detail_4753794_17386324776787_big.jpg?w=1200"
+      ],
+      "title": "블루밍 집업 자켓 우먼 BLACK",
+      "price": 139000,
       "choice": false,
       "new": false,
-      "size": ["S", "M", "L"]
+      "size": ["XS", "S", "M"]
     },
     {
       "id": 6,
-      "img": "https://noona-hnm.netlify.app/single-jacket.jpeg",
-      "title": "더블 브레스티드 재킷",
+      "img": "https://image.msscdn.net/thumbnails/images/goods_img/20250124/4744461/4744461_17377039610772_big.jpg?w=1200",
+      "detailImg": [
+        "https://image.msscdn.net/thumbnails/images/goods_img/20250124/4744461/4744461_17377039610772_big.jpg?w=1200",
+        "https://image.msscdn.net/thumbnails/images/prd_img/20250124/4744461/detail_4744461_17377039618864_big.jpg?w=1200",
+        "https://image.msscdn.net/thumbnails/images/prd_img/20250124/4744461/detail_4744461_17377039620841_big.jpg?w=1200"
+      ],
+      "title": "블루밍 부츠컷 팬츠 우먼 BLACK",
       "price": 39900,
       "choice": true,
       "new": false,
@@ -94,12 +104,17 @@
     },
     {
       "id": 7,
-      "img": "https://www.diadora.com/dw/image/v2/BBPK_PRD/on/demandware.static/-/Sites-diadora-master/default/dw7cc7a99d/images/hi-res/501.179584_C1161_00_HR.jpg?sw=1920",
-      "title": "오버사이즈 집업 후디",
-      "price": 99900,
+      "img": "https://image.msscdn.net/thumbnails/images/goods_img/20250204/4753806/4753806_17386325578969_big.jpg?w=1200",
+      "detailImg": [
+        "https://image.msscdn.net/thumbnails/images/goods_img/20250204/4753806/4753806_17386325578969_big.jpg?w=1200",
+        "https://image.msscdn.net/thumbnails/images/prd_img/20250204/4753806/detail_4753806_17386325590818_big.jpg?w=1200",
+        "https://image.msscdn.net/thumbnails/images/prd_img/20250204/4753806/detail_4753806_17386325593605_big.jpg?w=1200"
+      ],
+      "title": "블루밍 3부 쇼츠 우먼 BLACK",
+      "price": 79000,
       "choice": false,
       "new": true,
-      "size": ["S", "M", "L"]
+      "size": ["XS", "S", "M"]
     },
     {
       "id": 8,
