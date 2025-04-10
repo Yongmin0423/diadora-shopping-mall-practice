@@ -2,6 +2,8 @@ import { FaMagnifyingGlass } from "react-icons/fa6";
 import { IoCloseOutline } from "react-icons/io5";
 import styles from "./SearchModal.module.css";
 import { AnimatePresence, motion } from "motion/react";
+import { useNavigate } from "react-router-dom";
+import { useState } from "react";
 
 const modalVariants = {
   initial: {
@@ -19,6 +21,18 @@ const modalVariants = {
 };
 
 export default function SearchModal({ toggleModal }) {
+  const navigate = useNavigate();
+  const [keyword, setKeyword] = useState();
+  const handleChange = (e) => {
+    setKeyword(e.target.value);
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    navigate(`/search?q=${keyword}`);
+    toggleModal();
+  };
+
   return (
     <AnimatePresence>
       <motion.div
@@ -29,10 +43,11 @@ export default function SearchModal({ toggleModal }) {
         transition={{ type: "tween", duration: 0.3 }}
         className={styles.container}
       >
-        <div className={styles.searchArea}>
-          <input placeholder="Search" />
+        <form onSubmit={(e) => handleSubmit(e)} className={styles.searchArea}>
+          <input placeholder="Search" onChange={(e) => handleChange(e)} />
           <FaMagnifyingGlass className={styles.maginfy} />
-        </div>
+        </form>
+
         <IoCloseOutline onClick={toggleModal} className={styles.x} />
       </motion.div>
     </AnimatePresence>

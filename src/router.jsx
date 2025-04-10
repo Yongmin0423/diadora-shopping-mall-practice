@@ -3,6 +3,7 @@ import Login from "./routers/Login";
 import Home from "./routers/Home";
 import ProductDetail from "./routers/ProductDetail";
 import App from "./App";
+import Search from "./routers/Search";
 
 const router = createBrowserRouter([
   {
@@ -20,6 +21,10 @@ const router = createBrowserRouter([
       {
         path: "product/:id",
         element: <ProductDetail />,
+      },
+      {
+        path: "search",
+        element: <Search />,
       },
     ],
   },

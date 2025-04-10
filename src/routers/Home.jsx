@@ -12,7 +12,6 @@ export default function Home() {
   useEffect(() => {
     const getData = async () => {
       const data = await getProducts();
-      console.log(data);
       setProductList(data);
     };
     getData();
@@ -45,7 +44,7 @@ export default function Home() {
     },
   };
   return (
-    <>
+    <div className={styles.container}>
       <div className={styles.banner}>
         <AnimatePresence mode="wait">
           <motion.img
@@ -62,6 +61,6 @@ export default function Home() {
         <h3 className={styles.highlight}>Highlight</h3>
       </div>
       <Card productList={productList} />
-    </>
+    </div>
   );
 }

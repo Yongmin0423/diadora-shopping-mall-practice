@@ -2,9 +2,12 @@ import styles from "./Nav.module.css";
 import { FaShoppingBag } from "react-icons/fa";
 import { IoPerson } from "react-icons/io5";
 import { FaMagnifyingGlass } from "react-icons/fa6";
+import { GiHamburgerMenu } from "react-icons/gi";
+import { MdOutlineLogout } from "react-icons/md";
+import { FiLogIn } from "react-icons/fi";
 import { motion, AnimatePresence } from "motion/react";
 import SearchModal from "./SearchModal";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 
 const NavVariants = {
@@ -27,17 +30,65 @@ const LogoVariants = {
   },
 };
 
-export default function Nav() {
+const sidebarVariants = {
+  hidden: {
+    x: "-100%",
+  },
+  visible: {
+    x: 0,
+    transition: {
+      type: "spring",
+      stiffness: 300,
+      damping: 30,
+    },
+  },
+  exit: {
+    x: "-100%",
+    transition: {
+      ease: "easeInOut",
+      duration: 0.3,
+    },
+  },
+};
+
+export default function Nav({ authenticate, setAuthenticate }) {
   const [isOpen, setIsOpen] = useState(false);
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
   const navigate = useNavigate();
+
+  // Check if screen is mobile size
+  useEffect(() => {
+    const checkSize = () => {
+      setIsMobile(window.innerWidth <= 1200);
+    };
+
+    // Initial check
+    checkSize();
+
+    // Add event listener
+    window.addEventListener("resize", checkSize);
+
+    // Clean up
+    return () => window.removeEventListener("resize", checkSize);
+  }, []);
 
   const toggleModal = () => {
     setIsOpen((prev) => !prev);
   };
 
+  const toggleSidebar = () => {
+    setIsSidebarOpen((prev) => !prev);
+  };
+
+  const handleLogout = () => {
+    setAuthenticate(false);
+  };
+
   const goToLogin = () => {
     navigate("/login");
   };
+
   return (
     <>
       <AnimatePresence>
@@ -47,7 +98,13 @@ export default function Nav() {
           whileHover="hover"
           className={styles.container}
         >
-          <Link to="/">
+          {isMobile && (
+            <div className={styles.hamburger}>
+              <GiHamburgerMenu onClick={toggleSidebar} />
+            </div>
+          )}
+
+          <Link to="/" className={isMobile ? styles.centerLogo : ""}>
             <svg
               className={styles.logo}
               viewBox="114.96999999999994 202.91 2605.07 895.34"
@@ -69,25 +126,115 @@ export default function Nav() {
               </motion.g>
             </svg>
           </Link>
-          <ul className={styles.menu}>
-            <li className={styles.orange}>#Run</li>
-            <li>Men</li>
-            <li>Women</li>
-            <li>Shoes</li>
-            <li>Acc.</li>
-            <li>Sport</li>
-            <span>|</span>
-            <li>Outlet</li>
-            <li>Promotion</li>
-            <li>Lookbook</li>
-          </ul>
+
+          {!isMobile && (
+            <ul className={styles.menu}>
+              <li className={styles.orange}>#Run</li>
+              <li>Men</li>
+              <li>Women</li>
+              <li>Shoes</li>
+              <li>Acc.</li>
+              <li>Sport</li>
+              <span>|</span>
+              <li>Outlet</li>
+              <li>Promotion</li>
+              <li>Lookbook</li>
+            </ul>
+          )}
+
           <div className={styles.searchArea}>
             <FaMagnifyingGlass onClick={toggleModal} />
-            <FaShoppingBag />
-            <IoPerson onClick={goToLogin} />
+            {!isMobile && (
+              <>
+                <FaShoppingBag />
+                {!authenticate && <FiLogIn onClick={goToLogin} />}
+                {authenticate && (
+                  <>
+                    <IoPerson />
+                    <MdOutlineLogout onClick={handleLogout} />
+                  </>
+                )}
+              </>
+            )}
           </div>
         </motion.div>
+
         {isOpen && <SearchModal isOpen={isOpen} toggleModal={toggleModal} />}
+
+        {/* Sidebar for mobile view */}
+        <AnimatePresence>
+          {isSidebarOpen && (
+            <>
+              <motion.div
+                className={styles.overlay}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                onClick={toggleSidebar}
+              />
+              <motion.div
+                className={styles.sidebar}
+                variants={sidebarVariants}
+                initial="hidden"
+                animate="visible"
+                exit="exit"
+              >
+                <div className={styles.sidebarHeader}>
+                  <button
+                    className={styles.closeButton}
+                    onClick={toggleSidebar}
+                  >
+                    &times;
+                  </button>
+                  <h2>Menu</h2>
+                </div>
+
+                {/* User actions section in sidebar for mobile */}
+                {isMobile && (
+                  <div className={styles.sidebarUserActions}>
+                    <div className={styles.sidebarIcon}>
+                      <FaShoppingBag />
+                      <span>Cart</span>
+                    </div>
+
+                    {!authenticate ? (
+                      <div className={styles.sidebarIcon} onClick={goToLogin}>
+                        <FiLogIn />
+                        <span>Login</span>
+                      </div>
+                    ) : (
+                      <>
+                        <div className={styles.sidebarIcon}>
+                          <IoPerson />
+                          <span>Account</span>
+                        </div>
+                        <div
+                          className={styles.sidebarIcon}
+                          onClick={handleLogout}
+                        >
+                          <MdOutlineLogout />
+                          <span>Logout</span>
+                        </div>
+                      </>
+                    )}
+                  </div>
+                )}
+
+                <ul className={styles.sidebarMenu}>
+                  <li className={styles.orange}>#Run</li>
+                  <li>Men</li>
+                  <li>Women</li>
+                  <li>Shoes</li>
+                  <li>Acc.</li>
+                  <li>Sport</li>
+                  <li>Outlet</li>
+                  <li>Promotion</li>
+                  <li>Lookbook</li>
+                </ul>
+              </motion.div>
+            </>
+          )}
+        </AnimatePresence>
       </AnimatePresence>
     </>
   );

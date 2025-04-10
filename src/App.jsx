@@ -8,7 +8,7 @@ function App() {
   const [authenticate, setAuthenticate] = useState(false);
   return (
     <>
-      <Nav />
+      <Nav authenticate={authenticate} setAuthenticate={setAuthenticate} />
       <Outlet context={{ authenticate, setAuthenticate }} />
     </>
   );

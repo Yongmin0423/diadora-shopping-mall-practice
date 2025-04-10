@@ -1,3 +1,7 @@
+.container {
+  width: 100vw;
+}
+
 .banner {
   display: flex;
   justify-content: center;
@@ -7,10 +11,23 @@
   img {
     height: 100%;
   }
+  @media (max-width: 1700px) {
+    height: 50vh;
+  }
+  @media (max-width: 1250px) {
+    height: 30vh;
+    img {
+      width: 100%;
+    }
+  }
 }
 
 .highlight {
   font-size: 50px;
   color: white;
   font-weight: 700;
+
+  @media (max-width: 1700px) {
+    text-align: center;
+  }
 }

@@ -14,10 +14,11 @@ const CardVariants = {
 };
 
 export default function Card({ productList }) {
+  if (!productList) return;
   return (
     <div className={styles.container}>
       {productList.slice(0, 8).map((product) => (
-        <Link to={`product/${product.id}`}>
+        <Link to={`/product/${product.id}`}>
           <motion.div
             variants={CardVariants}
             initial="initial"

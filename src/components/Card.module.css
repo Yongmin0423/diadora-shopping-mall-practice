@@ -2,12 +2,26 @@
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   margin-top: 50px;
+  gap: 20px;
   img {
     width: 50%;
+  }
+  @media (max-width: 1700px) {
+    width: 100dvw;
+    grid-template-columns: repeat(3, 1fr);
+  }
+  @media (max-width: 1250px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (max-width: 850px) {
+    grid-template-columns: repeat(1, 1fr);
   }
 }
 
 .cardContainer {
+  display: flex;
+  justify-content: center;
   position: relative;
   &:first-child {
     transform-origin: center left;
