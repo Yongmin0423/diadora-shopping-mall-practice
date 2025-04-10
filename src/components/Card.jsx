@@ -8,8 +8,8 @@ const CardVariants = {
     y: 0,
   },
   hover: {
-    scale: 1.1,
-    y: -20,
+    scale: 1,
+    y: -10,
   },
 };
 
