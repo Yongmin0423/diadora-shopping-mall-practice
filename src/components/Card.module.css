@@ -32,8 +32,8 @@
 }
 
 .card {
-  width: 350px;
-  height: 450px;
+  width: 80%;
+  height: 40dvh;
   background-size: cover;
   background-position: center;
   display: flex;
